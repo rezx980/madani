@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التعبير عن الإرادة في القانون المدني - موقع تعليمي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 10px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .content-section {
+            display: none;
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        /* Mind Map Styles */
+        .mind-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .mind-map-node {
+            background-color: white;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            margin: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .mind-map-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-color: var(--accent-color);
+        }
+        
+        .mind-map-node.main {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .mind-map-node.sub {
+            background-color: var(--light-color);
+            border-color: var(--primary-color);
+        }
+        
+        .mind-map-node.law {
+            background-color: #fff8e1;
+            border-color: var(--warning-color);
+            border-left: 5px solid var(--warning-color);
+        }
+        
+        .node-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .node-title.law {
+            color: var(--accent-color);
+        }
+        
+        .law-article {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-right: 4px solid var(--secondary-color);
+        }
+        
+        .law-article h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .law-article p {
+            color: #555;
+        }
+        
+        /* Connections */
+        .connection {
+            width: 2px;
+            background-color: var(--secondary-color);
+            height: 30px;
+            margin: 0 auto;
+        }
+        
+        .connection.horizontal {
+            width: 30px;
+            height: 2px;
+        }
+        
+        /* Flex Container for Horizontal Layout */
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .flex-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Highlight Box */
+        .highlight {
+            background-color: #e8f4fc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-right: 5px solid var(--secondary-color);
+        }
+        
+        .highlight-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .nav-links a {
+                text-align: center;
+                margin-bottom: 5px;
+            }
+            
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>التعبير عن الإرادة في القانون المدني</h1>
+            <p>موقع تعليمي يشرح أحكام التعبير عن الإرادة في العقود مع المواد القانونية ذات الصلة</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#section1" class="nav-link active" data-section="section1">التعبير عن الإرادة</a></li>
+                <li><a href="#section2" class="nav-link" data-section="section2">الإيجاب والقبول</a></li>
+                <li><a href="#section3" class="nav-link" data-section="section3">زمان ومكان التعاقد</a></li>
+                <li><a href="#section4" class="nav-link" data-section="section4">صور خاصة للتعاقد</a></li>
+                <li><a href="#section5" class="nav-link" data-section="section5">عيوب الإرادة</a></li>
+                <li><a href="#section6" class="nav-link" data-section="section6">المواد القانونية</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Section 1: التعبير عن الإرادة -->
+        <section id="section1" class="content-section active">
+            <h2 class="section-title">التعبير عن الإرادة</h2>
+            
+            <div class="mind-map">
+                <div class="mind-map-node main">
+                    التعبير عن الإرادة
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">التعبير الصريح</div>
+                            <ul>
+                                <li>بالكلام (شفهياً)</li>
+                                <li>بالكتابة</li>
+                                <li>بالإشارة المتداولة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">التعبير الضمني</div>
+                            <p>يُستخلص من ظروف الحال ولا يكون مباشراً</p>
+                            <p>مثال: صعود الركوب إلى وسيلة النقل العامة يعتبر قبولاً ضمنياً</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="mind-map-node">
+                    <div class="node-title">حكم السكوت</div>
+                    <p><strong>القاعدة العامة:</strong> "السكوت في معرض الحاجة إلى بيان هو بيان"</p>
+                    
+                    <div class="highlight">
+                        <div class="highlight-title">حالات استثنائية يعتبر فيها السكوت قبولاً:</div>
+                        <ol>
+                            <li>وجود تعامل سابق بين الطرفين</li>
+                            <li>إذا تمخض العرض لمنفعة من وجه إليه</li>
+                            <li>في عقود الإذعان</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 2: الإيجاب والقبول -->
+        <section id="section2" class="content-section">
+            <h2 class="section-title">الإيجاب والقبول</h2>
+            
+            <div class="mind-map">
+                <div class="mind-map-node main">
+                    أركان التعبير الإرادي في العقود
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">الإيجاب</div>
+                            <p><strong>التعريف:</strong> تعبير عن الإرادة يتضمن عرضاً للتعاقد</p>
+                            <p><strong>الإلزامية:</strong> يكون ملزماً إذا اقترن بمدة محددة</p>
+                            <p><strong>مثال:</strong> عرض بيع سلعة بسعر معين مع تحديد مدة للقبول</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">القبول</div>
+                            <p><strong>التعريف:</strong> التعبير عن الإرادة بالموافقة على الإيجاب</p>
+                            <p><strong>الشرط الأساسي:</strong> يجب أن يكون مطابقاً تماماً للإيجاب</p>
+                            <p><strong>نتيجة عدم المطابقة:</strong> يعتبر رفضاً ويشكل إيجاباً جديداً</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: زمان ومكان التعاقد -->
+        <section id="section3" class="content-section">
+            <h2 class="section-title">زمان ومكان التعاقد</h2>
+            
+            <div class="mind-map">
+                <div class="mind-map-node main">
+                    تحديد زمان ومكان إبرام العقد
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">بين حاضرين</div>
+                            <p>يتم العقد في نفس المكان والزمان</p>
+                            <p><strong>وقت الإبرام:</strong> بمجرد صدور القبول</p>
+                            <p><strong>مكان الإبرام:</strong> المكان الذي صدر فيه القبول</p>
+                            <p>مثال: التعاقد المباشر وجهاً لوجه أو عبر الهاتف</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">بين غائبين</div>
+                            <p><strong>النظرية المعتمدة:</strong> نظرية العلم</p>
+                            <p><strong>زمان الإبرام:</strong> وقت علم الموجب بالقبول</p>
+                            <p><strong>مكان الإبرام:</strong> مكان علم الموجب بالقبول</p>
+                            <p><strong>القرينة:</strong> وصول القبول إلى الموجب يعتبر قرينة على علمه به</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: صور خاصة للتعاقد -->
+        <section id="section4" class="content-section">
+            <h2 class="section-title">صور خاصة للتعاقد</h2>
+            
+            <div class="mind-map">
+                <div class="mind-map-node main">
+                    الصور الخاصة للتعاقد
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">التعاقد بالمزايدة</div>
+                            <p><strong>طبيعته:</strong> لا يتم العقد إلا برسو المزاد</p>
+                            <p><strong>مثال:</strong> المزادات العلنية للسيارات أو التحف</p>
+                            <p><strong>الإيجاب:</strong> يكون بواسطة المزايدين</p>
+                            <p><strong>القبول:</strong> يكون بقرار الرسو من قائد المزاد</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <div class="mind-map-node sub">
+                            <div class="node-title">عقود الإذعان</div>
+                            <p><strong>التعريف:</strong> عقود يضع فيها طرف واحد شروطاً غير قابلة للنقاش</p>
+                            <p><strong>أمثلة:</strong> عقود التأمين، عقود الاتصالات، عقود المرافق العامة</p>
+                            <p><strong>سلطة القاضي:</strong> حق تعديل الشروط التعسفية أو إبطالها</p>
+                            <p><strong>هدف الحماية:</strong> حماية الطرف الضعيف في التفاوض</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 5: عيوب الإرادة -->
+        <section id="section5" class="content-section">
+            <h2 class="section-title">عيوب الإرادة (عيوب الرضا)</h2>
+            
+            <div class="mind-map">
+                <div class="mind-map-node main">
+                    عيوب الإرادة في التعاقد
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <div class="mind-map-node law">
+                            <div class="node-title law">التدليس (المواد 86، 87 قانون مدني)</div>
+                            <p><strong>التعريف:</strong> استخدام حيل لإيقاع المتعاقد في غلط يدفعه للتعاقد</p>
+                            <p><strong>أنواعه:</strong></p>
+                            <ul>
+                                <li>تدليس بالكتمان (إخفاء معلومات جوهرية)</li>
+                                <li>تدليس بالتزييف (تقديم معلومات كاذبة)</li>
+                            </ul>
+                            <p><strong>الأثر:</strong> يبطل العقد إذا كان جوهرياً ودفع الطرف للتعاقد</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <div class="mind-map-node">
+                            <div class="node-title">الغلط</div>
+                            <p><strong>التعريف:</strong> توهم يصور للطرف غير الواقع</p>
+                            <p><strong>شروطه:</strong> يجب أن يكون جوهرياً وأن يتعلق بأصل الشيء أو بصفة جوهرية فيه</p>
+                            <p><strong>الأثر:</strong> يبطل الرضا إذا توافرت شروط الغلط الجوهري</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <div class="mind-map-node law">
+                            <div class="node-title law">الإكراه (المواد 88، 89 قانون مدني)</div>
+                            <p><strong>التعريف:</strong> ضغط غير مشروع يولد رهبة في نفس المتعاقد تدفعه للقبول</p>
+                            <p><strong>أنواعه:</strong></p>
+                            <ul>
+                                <li>إكراه مادي (تهديد بالعنف)</li>
+                                <li>إكراه معنوي (تهديد بالفضيحة أو بالإضرار بالمصالح)</li>
+                            </ul>
+                            <p><strong>الأثر:</strong> يبطل الإرادة المعيبة بالإكراه</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <div class="mind-map-node">
+                            <div class="node-title">الاستغلال</div>
+                            <p><strong>التعريف:</strong> اتفاق يظهر فيه اختلال كبير بين الالتزامات بسبب استغلال حاجة أو هوى أو طيش</p>
+                            <p><strong>شروطه:</strong> وجود اختلال صارخ + استغلال حالة الضعف</p>
+                            <p><strong>الأثر:</strong> إما إبطال العقد أو تعديله لتحقيق التوازن</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 6: المواد القانونية -->
+        <section id="section6" class="content-section">
+            <h2 class="section-title">المواد القانونية المذكورة</h2>
+            
+            <div class="mind-map">
+                <div class="mind-map-node main">
+                    المواد القانونية - القانون المدني
+                </div>
+                
+                <div class="connection"></div>
+                
+                <div class="law-article">
+                    <h4>المادة 86 - التدليس</h4>
+                    <p>التدليس هو استعمال الحيلة للوصول إلى رضاء المتعاقد الآخر، ويكون التدليس سبباً لبطلان العقد إذا كان من الجسامة بحيث لو لم يستعمل لامتنع المتعاقد عن التعاقد.</p>
+                </div>
+                
+     <div class="law-article">
+                    <h4>المادة 87 - أثر التدليس</h4>
+                    <p>1. إذا صدر التدليس من المتعاقد نفسه، فللمتعاقد الآخر طلب إبطال العقد.<br>
+                    2. إذا صدر التدليس من أجنبي، فلا يبطل العقد إلا إذا كان المتعاقد الآخر يعلم به أو كان لا بد أن يعلم به.<br>
+                    3. لا يمنع من المطالبة بالتعويض عن الضرر الناتج عن التدليس.</p>
+                </div>
+                
+                <div class="law-article">
+                    <h4>المادة 88 - الإكراه</h4>
+                    <p>الإكراه هو إلزام الشخص على التعاقد بتهديد يقع عليه أو على غيره من الأهل أو الأقارب في النفس أو العرض أو المال، ويكون الإكراه سبباً لبطلان العقد إذا كان من الجسامة بحيث يولد في نفس الشخص رهبة لها تأثير في إرادته.</p>
+                </div>
+                     <div class="law-article">
+                    <h4>المادة 89 - أثر الإكراه</h4>
+                    <p>1. العقد الذي يبرم تحت تأثير الإكراه يكون باطلاً.<br>
+                    2. إذا زال الإكراه وصاحب العقد أقره صراحة أو ضمناً، فإن العقد يصبح صحيحاً من وقت الإقرار.<br>
+                    3. للمتعاقد المكره المطالبة بالتعويض عن الضرر الذي أصابه من الإكراه.</p>
+                </div>
+                
+                <div class="highlight">
+                    <div class="highlight-title">ملاحظات هامة:</div>
+                    <ul>
+                        <li>هذه المواد جزء من القانون المدني في العديد من الدول العربية</li>
+                        <li>تختلف ترقيم المواد قليلاً من دولة لأخرى لكن المحتوى القانوني متشابه</li>
+                        <li>للاستزادة يمكن الرجوع إلى القانون المدني لدولتك لمعرفة الترقيم الدقيق</li>
+                    </ul>
+                </div>
+            </div>
+              </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>موقع تعليمي حول التعبير عن الإرادة في القانون المدني - للمراجعة والدراسة</p>
+            <p>© 2023 - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links and sections
+                document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Show corresponding section
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+                
+                // Smooth scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mind map node interaction
+        document.querySelectorAll('.mind-map-node').forEach(node => {
+            node.addEventListener('click', function() {
+                // Remove highlight from all nodes
+                document.querySelectorAll('.mind-map-node').forEach(el => {
+                    el.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                });
+                
+                // Add highlight to clicked node
+                this.style.boxShadow = '0 8px 20px rgba(52, 152, 219, 0.3)';
+            });
+        });
+        
+        // Initialize first node as active
+        document.querySelector('.mind-map-node').style.boxShadow = '0 8px 20px rgba(52, 152, 219, 0.3)';
+    </script>
+</body>
+</html>
